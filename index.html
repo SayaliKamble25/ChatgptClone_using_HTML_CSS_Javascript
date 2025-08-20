@@ -1,44 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ChatGPT Clone</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="sidebar-header">
-        <h2>ChatGPT</h2>
-      </div>
-      <nav class="sidebar-nav">
-        <button class="new-chat">+ New Chat</button>
-        <ul>
-          <li>💬 Chat 1</li>
-          <li>💬 Chat 2</li>
-          <li>💬 Chat 3</li>
-        </ul>
-      </nav>
-    </aside>
+  <header class="topbar">
+    <h1>ChatGPT</h1>
+    <div class="auth">
+      <button class="pill">Log in</button>
+      <button class="pill outline">Sign up</button>
+    </div>
+  </header>
 
-    <!-- Chat Area -->
-    <main class="chat">
-      <div class="chat-header">
-        <h3>ChatGPT Clone</h3>
-      </div>
-      <div class="chat-messages" id="chat-messages">
-        <div class="message bot">👋 Hello! How can I help you today?</div>
-      </div>
-      <div class="chat-input">
-        <input type="text" id="user-input" placeholder="Type your message..." />
-        <button id="send-btn">➤</button>
-      </div>
-    </main>
-  </div>
+  <main class="container">
+    <div id="answer" class="answer-box">
+      <div id="answerText">Ask something to see the response here...</div>
+      <div id="attachments" class="attachments"></div>
+    </div>
 
-  <!-- Link your external script file -->
+    <div class="chat-box">
+      <input type="text" id="questionInput" placeholder="Ask anything..." />
+      <button class="btn send-btn" id="askBtn" onclick="askgemini()">Ask</button>
+    </div>
+
+    <div class="button-row">
+      <button class="btn" id="attachBtn" onclick="handleAttachClick()">Attach</button>
+      <button class="btn" id="searchBtn" onclick="handleSearch()">Search</button>
+      <button class="btn" id="summBtn" onclick="handleSummarize()">Summarize</button>
+      <button class="btn" onclick="clearResponse()">Clear</button>
+    </div>
+  </main>
+
+  <!-- hidden file input triggered by Attach -->
+  <input type="file" id="fileInput" style="display: none" multiple onchange="handleFileChange(event)" />
+
+  <footer class="footer">
+    By messaging ChatGPT, you agree to our Terms and have read our Privacy Policy.
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
