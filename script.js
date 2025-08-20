@@ -1,4 +1,4 @@
-const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyDxMwTrkVflgbw1acOrThAH-RGBJqYHfBE';
+const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=Your_key';
 
 // store any selected files so user can see attachments
 window.attachedFiles = [];
@@ -196,3 +196,4 @@ function clearResponse() {
   document.getElementById("fileInput").value = "";
   window.attachedFiles = [];
 }
+
